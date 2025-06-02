@@ -56,15 +56,15 @@ public class BookManager {
             throw new IllegalArgumentException("Member " + memberId + " not found");
         }
 
-        book.addToWaitlist(member); // Now passing Member object
+        book.addToWaitlist(member);
     }
 
-    public Member getNextFromWaitlist(String isbn) { // Changed return type to Member
+    public Member getNextFromWaitlist(String isbn) {
         Book book = getBookByIsbn(isbn);
         if (book == null) {
             throw new IllegalArgumentException("Book " + isbn + " not found");
         }
-        return book.getNextInWaitlist(); // Returns Member object
+        return book.getNextInWaitlist();
     }
 
     public boolean hasWaitlist(String isbn) {

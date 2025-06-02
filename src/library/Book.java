@@ -20,14 +20,12 @@ public class Book {
         this.waitList = new CustomQueue<>();
     }
 
-    // Getters and setters
     public String getTitle() { return title; }
     public String getAuthor() { return author; }
     public String getIsbn() { return isbn; }
     public boolean isAvailable() { return isAvailable; }
     public void setAvailable(boolean available) { isAvailable = available; }
 
-    // Modified methods
     public void addToWaitlist(Member member) {
         if (member == null) {
             throw new NullPointerException("Member cannot be null");
@@ -43,7 +41,6 @@ public class Book {
         return !waitList.isEmpty();
     }
 
-    // New helper method to add by member ID
     public void addToWaitlist(String memberId, MemberManager memberManager) {
         if (memberId == null) {
             throw new NullPointerException("Member ID cannot be null");
